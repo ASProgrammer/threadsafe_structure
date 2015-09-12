@@ -1,10 +1,12 @@
 #include <iostream>
+#include <exception>
 
-using namespace std;
+int main(int argc, char** argv) try {
 
-int main()
-{
-    cout << "Hello World!" << endl;
+
     return 0;
 }
-
+catch (std::exception& e) {
+    std::cerr << e.what() << std::endl;
+    return -1;
+}
