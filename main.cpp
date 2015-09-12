@@ -1,8 +1,17 @@
 #include <iostream>
 #include <exception>
 
-int main(int argc, char** argv) try {
+#include "threadsafequeue.h"
 
+int main(int argc, char** argv) try {
+    threadsafe::ThreadSafeQueue<int> queue;
+    queue.push(1);
+    queue.push(2);
+
+    auto res_value = 0;
+    queue.wait_and_pop(res_value);
+    std::cout << res_value << " ";
+    std::cout << std::endl;
 
     return 0;
 }
