@@ -2,6 +2,7 @@
 #include <exception>
 
 #include "threadsafequeue.h"
+#include "stack.h"
 
 int main(int argc, char** argv) try {
     threadsafe::ThreadSafeQueue<int> queue;
