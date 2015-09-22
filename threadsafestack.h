@@ -6,7 +6,7 @@
 #include <mutex>
 
 template <typename T>
-class Stack: public boost::noncopyable {
+class ThreadSafeStack: public boost::noncopyable {
     struct Node {
         std::shared_ptr<T> m_data;
         std::unique_ptr<Node> m_next;
